@@ -10,20 +10,15 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    // GraphQL
-    implementation 'org.springframework.boot:spring-boot-starter-parent'
-    // org.springframework.boot 2.7.0 以前の場合は下記に書き換え
-    //implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter'
-    //implementation 'com.graphql-java-kickstart:graphql-java-tools'
-    
-
+	testImplementation 'org.springframework:spring-webflux'
+	testImplementation 'org.springframework.graphql:spring-graphql-test'
 }
 
 tasks.named('test') {
