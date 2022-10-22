@@ -18,8 +18,11 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // GraphQL
-    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0'
-    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-parent'
+    // org.springframework.boot 2.7.0 以前の場合は下記に書き換え
+    //implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter'
+    //implementation 'com.graphql-java-kickstart:graphql-java-tools'
+    
 
 }
 

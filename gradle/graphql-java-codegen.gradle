@@ -8,13 +8,11 @@ graphqlCodegen {
     outputDir = new File("$buildDir/generated")
     graphqlSchemas.includePattern = "schema\\.graphqls"
     apiPackageName = "com.example.demographqlfileupload.graphql.resolvers"
-    modelPackageName = "com.example.demographqlfileupload.graphql.model"
+    // 通常、modelが存在しないことはほぼあり得ないが、本サンプルでは存在しないため指定しない
+    //modelPackageName = "com.example.demographqlfileupload.graphql.model"
     modelNameSuffix = "TO"
-
-    parentInterfaces {
-        queryResolver = "graphql.kickstart.tools.GraphQLQueryResolver"
-        mutationResolver = "graphql.kickstart.tools.GraphQLMutationResolver"
-        subscriptionResolver = "graphql.kickstart.tools.GraphQLSubscriptionResolver"
-        resolver = "graphql.kickstart.tools.GraphQLResolver<{{TYPE}}>"
-    }
+    // scalarのマッピング対象クラス
+    customTypesMapping = [
+        Upload: "javax.servlet.http.Part"
+    ]
 }
