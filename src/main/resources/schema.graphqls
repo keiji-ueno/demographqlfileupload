@@ -1,0 +1,14 @@
+"""
+アップロードファイル
+"""
+scalar Upload
+
+type Query {
+  """ 
+  ファイルをアップロードする
+  """
+  upload(
+    """ ファイル """
+    file: Upload
+  ): Boolean
+}

@@ -1,0 +1,20 @@
+apply plugin: "io.github.kobylynskyi.graphql.codegen"
+
+compileJava.options.encoding = 'UTF-8'
+
+graphqlCodegen {
+    // all config options:
+    // https://github.com/kobylynskyi/graphql-java-codegen/blob/master/docs/codegen-options.md
+    outputDir = new File("$buildDir/generated")
+    graphqlSchemas.includePattern = "schema\\.graphqls"
+    apiPackageName = "com.example.demographqlfileupload.graphql.resolvers"
+    modelPackageName = "com.example.demographqlfileupload.graphql.model"
+    modelNameSuffix = "TO"
+
+    parentInterfaces {
+        queryResolver = "graphql.kickstart.tools.GraphQLQueryResolver"
+        mutationResolver = "graphql.kickstart.tools.GraphQLMutationResolver"
+        subscriptionResolver = "graphql.kickstart.tools.GraphQLSubscriptionResolver"
+        resolver = "graphql.kickstart.tools.GraphQLResolver<{{TYPE}}>"
+    }
+}

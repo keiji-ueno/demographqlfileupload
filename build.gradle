@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'io.github.kobylynskyi.graphql.codegen' version '5.5.0'
 	id 'java'
 }
 
@@ -9,14 +10,22 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // GraphQL
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0'
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.1.0'
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// GraphQL schema定義からのJavaコード生成
+apply from: 'gradle/graphql-java-codegen.gradle'
