@@ -15,4 +15,8 @@ graphqlCodegen {
     customTypesMapping = [
         Upload: "javax.servlet.http.Part"
     ]
+    parentInterfaces {
+        queryResolver = "graphql.kickstart.tools.GraphQLQueryResolver"
+        mutationResolver = "graphql.kickstart.tools.GraphQLMutationResolver"
+    }
 }

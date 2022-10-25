@@ -3,6 +3,8 @@
 """
 scalar Upload
 
+type Query {}
+
 type Mutation {
   """ 
   ファイルをアップロードする

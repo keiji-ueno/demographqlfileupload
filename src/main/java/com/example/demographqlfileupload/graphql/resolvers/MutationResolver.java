@@ -1,10 +1,11 @@
 package com.example.demographqlfileupload.graphql.resolvers;
 
+
 @javax.annotation.processing.Generated(
     value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
-    date = "2022-10-22T15:11:53+0900"
+    date = "2022-10-25T19:12:40+0900"
 )
-public interface MutationResolver {
+public interface MutationResolver extends graphql.kickstart.tools.GraphQLMutationResolver {
 
     /**
      * ファイルをアップロードする

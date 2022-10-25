@@ -9,5 +9,4 @@ public class DemographqlfileuploadApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemographqlfileuploadApplication.class, args);
 	}
-
 }
